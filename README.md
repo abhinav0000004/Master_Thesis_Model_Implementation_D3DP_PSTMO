@@ -34,20 +34,16 @@ This repository contains a combined and modified implementation of the following
 ### Step 1: Add Your Input Videos
 
 - For **D3DP**, put videos inside:  
-  `Data/D3DP/outputs/`
+  `video-to-pose3D-D3DP/outputs/`
 
 - For **P-STMO**, put videos inside:  
-  `Data/PSTMO/outputs/`
+  `video-to-pose3D-PSTO/outputs/`
 
 ---
 
 ### Step 2: Run the Main Scripts
 
 Each script runs a complete pipeline:
-- Extract 2D keypoints using a modified video-to-pose3D implementation
-- Feed them to the model
-- Save 2D and 3D outputs
-
 #### ▶️ For D3DP:
 ```bash
 python video-to-pose3D-D3DP/videopose_diffusion.py
@@ -80,9 +76,9 @@ Each run will generate:
    - Ground_Truth_Angles_Processed/Model_Angles_Processed: Contains data processed from Model's output, where the first frame's data has been subtracted from the rest of the frames in each action sequence to reduce initial bias.
    - Ground_Truth_Angles/Model_Angles: Absolute Angles.
 
-  - Run `Calculate_MPJAE.py` to calculate the Mean Per Joint Angle Error (MPJAE) between ground truth and Model's predicted results. You can choose whether you want to use processed angles or absolute angles and modify the code accordingly (For thesis I used processed angles). The output will be stored in the Data folder in Excel format.
+- Run `Calculate_MPJAE.py` to calculate the Mean Per Joint Angle Error (MPJAE) between ground truth and Model's predicted results. You can choose whether you want to use processed angles or absolute angles and modify the code accordingly (For thesis I used processed angles). The output will be stored in the Data folder in Excel format.
  
-  - **NOTE**: Both models share a similar flow.
+ - **NOTE**: Both models share a similar flow.
 
 ---
 
